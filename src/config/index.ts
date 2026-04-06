@@ -1,7 +1,7 @@
-import { baseUrl } from "@/env";
+// import { baseUrl } from "@/env";
 
 export const siteConfig = {
-  baseUrl,
+  baseUrl: "http://localhost:3000",
   email: "info@usomini.com",
   phone: "(234) 802 637 8305",
   location: "usomini address",
