@@ -17,7 +17,7 @@ const AboutPage = () => {
       />
 
       {/* Our Story Section */}
-      <section className="py-20">
+      <section>
         <MaxWidthWrapper>
           <h2 className="text-4xl font-bold mb-6 text-gray-900">
             Our <span className="text-green-700">Story</span>

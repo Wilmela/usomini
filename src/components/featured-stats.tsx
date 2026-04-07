@@ -11,8 +11,8 @@ type StatsType = {
 
 const stat = {
   population: 10,
-  projects: 10,
-  leaders: 10,
+  projects: 1,
+  leaders: 1,
   years: 10,
 };
 const FeaturedStats = () => {
@@ -76,7 +76,7 @@ function Stat({ value, description, className }: StatsType) {
     <div
       className={cn(
         "space-y-4 border flex flex-col items-center justify-between py-8 bg-green-50 backdrop-blur-2xl group group-hover:shadow-xl group-hover:scale-105 transition-all duration-300 hover:rotate-z-5 cursor-pointer ",
-        className
+        className,
       )}
     >
       <Count
@@ -95,7 +95,7 @@ function DesktopStat({ value, description, className }: StatsType) {
     <div
       className={cn(
         "space-y-4 border flex flex-col items-center justify-between py-8 bg-green-50 backdrop-blur-2xl group group-hover:shadow-xl group-hover:scale-105 transition-all duration-300 hover:rotate-z-5 cursor-pointer  flex-1 h-36",
-        className
+        className,
       )}
     >
       <Count

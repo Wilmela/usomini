@@ -83,8 +83,6 @@ const LeadersPage = () => {
                       of our ancestors."
       />
       <MaxWidthWrapper>
-       
-
         <section>
           <SectionTitle
             title="Revered Kings"
@@ -213,8 +211,8 @@ function OtherLeaderCard({
 }) {
   return (
     <div className={cn("flex flex-col gap-4 relative bg-green-50", className)}>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-4">
-        <div className="flex-[0.5] relative size-37.5 rounded-full overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-5 items-center gap-4 px pt-4-4">
+        <div className="relative overflow-hidden aspect-square col-span-3">
           <Image
             src={imgUrl}
             alt={`${name}-photo`}
@@ -223,15 +221,15 @@ function OtherLeaderCard({
           />
         </div>
 
-        <div>
-          <h3>{name}</h3>
-          <p>{title}</p>
+        <div className="col-span-2">
+          <h3 className="text-xl font-bold">{name}</h3>
+          <p className="text-sm font-light">{title}</p>
         </div>
       </div>
 
-      <div>
-        <h3>About</h3>
-        <p>{about}</p>
+      <div className="px-4 mb-4">
+        <h3 className="text-lg md:text-xl font-bold">About</h3>
+        <p className="p-text">{about}</p>
       </div>
 
       <div className="absolute size-full -top-3 -right-3 bg-green-700 -z-10" />
@@ -254,8 +252,9 @@ function YouthLeaderCard({
 }) {
   return (
     <div className={cn("flex flex-col gap-4 relative bg-green-50", className)}>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-4">
-        <div className="flex-[0.5] relative size-37.5 rounded-full overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 p-4">
+
+        <div className="relative size-38.5 rounded-full overflow-hidden">
           <Image
             src={imgUrl}
             alt={`${name}-photo`}
@@ -265,14 +264,14 @@ function YouthLeaderCard({
         </div>
 
         <div>
-          <h3>{name}</h3>
-          <p>{title}</p>
+          <h3 className="text-xl font-bold">{name}</h3>
+          <p className="text-sm font-light">{title}</p>
         </div>
       </div>
 
-      <div>
-        <h3>About</h3>
-        <p>{about}</p>
+      <div className="px-4 mb-4">
+        <h3 className="text-lg md:text-xl font-bold">About</h3>
+        <p className="p-text">{about}</p>
       </div>
 
       <div className="absolute size-full -top-3 -left-3 bg-green-700 -z-10" />

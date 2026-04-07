@@ -180,7 +180,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {contactInfo.map((contact, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href={contact.href}
                     className="flex items-start gap-3 text-gray-300 hover:text-green-300 transition-colors group"
                   >
@@ -188,7 +188,7 @@ const Footer = () => {
                       {contact.icon}
                     </div>
                     <span className="pt-1">{contact.text}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

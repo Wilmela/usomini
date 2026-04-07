@@ -8,28 +8,28 @@ import ProjectCard from "./project-card";
 export default function FeaturedProjects() {
   const values = [
     {
-      title: "Community First",
+      title: "Community Unity",
       description:
         "We prioritize collective well-being over individual gain, fostering an environment where every member feels valued, heard, and supported in their journey.",
-      imgUrl: "/assets/images/bg.jpg",
+      imgUrl: "/assets/images/t-rulers.jpg",
     },
     {
-      title: "Inclusive Unity",
+      title: "Education",
       description:
         "Embracing diversity as our strength, we build bridges across generations, cultures, and backgrounds to create a truly unified community.",
-      imgUrl: "/assets/images/bg.jpg",
+      imgUrl: "/assets/images/edu.jpg",
     },
     {
-      title: "Sustainable Stewardship2",
+      title: "Usomini Beauty And Cultural Services",
       description:
         "Responsibly managing our natural resources to ensure Usomini's beauty and bounty endure for generations to come.",
-      imgUrl: "/assets/images/bg.jpg",
+      imgUrl: "/assets/images/pg.jpg",
     },
     {
-      title: "Sustainable Stewardship",
+      title: "Tradition Events",
       description:
         "Responsibly managing our natural resources to ensure Usomini's beauty and bounty endure for generations to come.",
-      imgUrl: "/assets/images/bg.jpg",
+      imgUrl: "/assets/images/wrestle.jpg",
     },
   ];
 
@@ -61,17 +61,19 @@ export default function FeaturedProjects() {
             title={values[2].title}
             description={values[2].description}
             imgUrl={values[2].imgUrl ?? "/assets/images/bg.jpg"}
+            imageClassName="aspect-video"
           />
           <ProjectCard
             className="h-60 w-125"
             title={values[3].title}
             description={values[3].description}
             imgUrl={values[3].imgUrl ?? "/assets/images/bg.jpg"}
+            imageClassName="aspect-video"
           />
         </div>
       </div>
 
-      <div className="md:hidden grid grid-cols-1 gap-6">
+      {/* <div className="md:hidden grid grid-cols-1 gap-6">
         {values.map((v) => (
           <ProjectCard
             className="w-full h-75"
@@ -79,9 +81,10 @@ export default function FeaturedProjects() {
             description={v.description}
             imgUrl={v.imgUrl}
             title={v.title}
+            imageClassName="aspect-video"
           />
         ))}
-      </div>
+      </div> */}
     </MaxWidthWrapper>
   );
 }

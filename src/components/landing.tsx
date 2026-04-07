@@ -14,8 +14,8 @@ gsap.registerPlugin(useGSAP, SplitText);
 const Landing = () => {
   useGSAP(() => {
     if (typeof window !== "undefined") return;
-    
-      const texts = gsap.utils.toArray<HTMLElement>("#h1");
+
+    const texts = gsap.utils.toArray<HTMLElement>("#h1");
 
     texts.forEach((text) => {
       const split = new SplitText(text, { type: "chars, words" });
@@ -82,7 +82,7 @@ const Landing = () => {
 
       <MaxWidthWrapper className="flex flex-col items-center justify-center md:space-y-6">
         <div className="z-20 flex flex-col items-end">
-          <h4 className="capitalize z-20 font-light text-white">
+          <h4 className="capitalize z-20 font-light text-white text-xs md:text-sm">
             The Golden Heartland
           </h4>
 

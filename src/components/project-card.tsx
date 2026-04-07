@@ -8,6 +8,7 @@ type ProjectCardProps = {
   title: string;
   description: string;
   className?: string;
+  imageClassName?: string;
 };
 
 export default function ProjectCard({
@@ -16,6 +17,7 @@ export default function ProjectCard({
   imgUrl,
 
   className,
+  imageClassName
 }: ProjectCardProps) {
   return (
     <div
@@ -24,7 +26,7 @@ export default function ProjectCard({
         className
       )}
     >
-      <Image src={imgUrl} fill alt="projects" />
+      <Image src={imgUrl} fill alt="projects" className={cn(imageClassName, 'object-cover')} />
 
       <div className="hidden group-hover:block transition-opacity duration-300 absolute bottom-2 rounded-md left-0 right-0 text-white border p-2 mx-2 bg-black/50">
         <h3 className="text-xl font-bold mb-3 group-hover:text-primary-700 transition-colors group-hover:shadow-shinny">

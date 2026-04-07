@@ -27,18 +27,18 @@ const Header = () => {
       <MaxWidthWrapper className="flex h-16 items-center justify-between py-12">
         <Link
           href="/"
-          className="text-2xl md:text-5xl font-bold tracking-tighter text-green-700 hover:text-green-800 transition-colors"
+          className="relative text-2xl md:text-5xl font-bold tracking-tighter text-green-700 hover:text-green-800 transition-colors size-20 md:size-28"
         >
           <Image
             src="/assets/images/logo.png"
-            width={120}
-            height={60}
+            fill
             alt="logo"
             className="object-contain"
+            sizes="64px"
           />
         </Link>
 
-        <DesktopNav/>
+        <DesktopNav />
 
         <div className="flex items-center gap-4 px-6">
           <Button
@@ -157,11 +157,9 @@ function MobileNav({ open, onOpenChange }: MobileNavProps) {
         </nav>
 
         <div className="mt-8 pt-6 border-t">
-          <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-            <span className="size-16 bg-green/10 flex items-center justify-center">
-              <p className="text-bold text-2xl">U</p>
-            </span>
-          </Button>
+          <span className="size-16 bg-green/10 flex items-center justify-center rounded-full bg-green-600 hover:bg-green-700">
+            <p className="text-bold text-2xl text-white">U</p>
+          </span>
         </div>
       </SheetContent>
     </Sheet>
