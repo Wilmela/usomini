@@ -25,6 +25,8 @@ export const appointmentSchema = z.object({
   insuranceNumber: z.string().optional(),
 });
 
+export type contactFormSchemaType = z.infer<typeof contactFormSchema>;
+
 export type AppointmentFormDataType = z.infer<typeof appointmentSchema>;
 
 export const emailSchema = z.object({
@@ -61,30 +63,30 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 export const signUpSchema = z.object({
   name: z.string().min(2, "Full name must be at least 2 characters"),
   username: z.string().min(3, "Username must be at least 3 characters"),
-  email: z.string().email("Please enter a valid email address"),
+  email: z.email("Please enter a valid email address"),
   password: z
     .string()
     .min(8, "Password must be at least 8 characters")
     .regex(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
-      "Password must contain at least one uppercase letter, one lowercase letter, and one number"
+      "Password must contain at least one uppercase letter, one lowercase letter, and one number",
     ),
 });
 
-export type SignUpFormDataType = z.infer<typeof signUpSchema>;
+export type signUpFormSchemaType = z.infer<typeof signUpSchema>;
 
 export const signInSchema = z.object({
-  email: z.string().email("Please enter a valid email address"),
+  email: z.email("Please enter a valid email address"),
   password: z
     .string()
     .min(8, "Password must be at least 8 characters")
     .regex(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
-      "Password must contain at least one uppercase letter, one lowercase letter, and one number"
+      "Password must contain at least one uppercase letter, one lowercase letter, and one number",
     ),
 });
 
-export type SignInFormDataType = z.infer<typeof signInSchema>;
+export type signInFormSchemaType = z.infer<typeof signInSchema>;
 
 export const blogSchema = z.object({
   title: z
@@ -103,7 +105,7 @@ export const blogSchema = z.object({
     .string()
     .min(1, "Content is required")
     .min(10, "Content must be at least 10 characters"),
-  image: z.string(),
+  banner: z.string(),
 
   author: z.string().describe("post author's name"),
 
@@ -129,7 +131,7 @@ export const blogSchema = z.object({
     .max(100, "Slug must be less than 100 characters")
     .regex(
       /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
-      "Slug can only contain lowercase letters, numbers, and hyphens"
+      "Slug can only contain lowercase letters, numbers, and hyphens",
     ),
 });
 
@@ -187,3 +189,51 @@ export const blogUpdateSchema = blogSchema.extend({
 });
 
 export type BlogUpdateDataType = z.infer<typeof blogUpdateSchema>;
+
+export const executiveSchema = z.object({
+  name: z
+    .string()
+    .min(1, "Name is required")
+    .min(3, "Name must be at least 3 characters")
+    .max(200, "Name must be less than 200 characters"),
+
+  position: z
+    .string()
+    .min(1, "Position is required")
+    .min(5, "Position must be at least 5 characters")
+    .max(300, "Position must be less than 300 characters"),
+
+  bio: z
+    .string()
+    .min(1, "Bio is required")
+    .min(10, "Bio must be at least 10 characters"),
+  tenure: z.string(),
+  role: z.string(),
+  image: z.string(),
+});
+
+export type ExecutiveFormDataType = z.infer<typeof executiveSchema>;
+
+export const projectSchema = z.object({
+  title: z
+    .string()
+    .min(1, "Title is required")
+    .min(3, "Title must be at least 3 characters")
+    .max(200, "Title must be less than 200 characters"),
+
+  location: z
+    .string()
+    .min(1, "Location is required")
+    .min(10, "Excerpt must be at least 10 characters")
+    .max(300, "Excerpt must be less than 300 characters"),
+
+  description: z
+    .string()
+    .min(1, "Description is required")
+    .min(10, "Content must be at least 10 characters"),
+  date: z.string(),
+  imageUrl: z.string(),
+  status: z.boolean().optional(),
+});
+
+export type ProjectFormDataType = z.infer<typeof projectSchema>;

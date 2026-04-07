@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CheckCircle2, Send } from "lucide-react";
 import { Form } from "./ui/form";
-import { ContactFormData, contactFormSchema } from "@/lib/validations/contact";
+import { ContactFormData, contactFormSchema } from "@/lib/validations";
 import { FieldGroup, FieldLegend, FieldSet } from "./ui/field";
 import { CustomInput, CustomSelect, CustomTextarea } from "./customs";
 // import { contactUs } from "@/lib/actions/contact.actions";

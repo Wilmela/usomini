@@ -1,13 +1,13 @@
 // app/api/newsletter/subscribe/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import dbConnect from "@/lib/db";
-import NewsletterSubscriber from "@/lib/models/newsletter.models";
 import { newsletterFormSchema } from "@/lib/validations/newsletter";
 import z from "zod";
+import NewsletterSubscriber from "@/lib/database/models/newsletter.models";
+import { connectToDatabase } from "@/lib/database";
 
 export async function POST(request: NextRequest) {
   try {
-    await dbConnect();
+    await connectToDatabase();
 
     const body = await request.json();
     const validatedData = newsletterFormSchema.parse(body);

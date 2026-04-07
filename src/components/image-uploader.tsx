@@ -5,6 +5,7 @@ import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
 import { toast } from "sonner";
 import { ImageIcon } from "lucide-react";
+import { cloudName } from "@/env";
 
 type Props = {
   publicId: string;
@@ -38,8 +39,9 @@ const ImageUploader = ({
   return (
     <>
       <CldUploadWidget
-        uploadPreset="megatron"
+        uploadPreset="onelga"
         options={{
+          cloudName: cloudName,
           multiple: false,
           resourceType: "image",
         }}
@@ -62,7 +64,7 @@ const ImageUploader = ({
                   onClick={() => open()}
                   className="flex flex-col items-center p-4 cursor-pointer"
                 >
-                  <ImageIcon className="w-8 h-8 text-gray-400" />
+                  <ImageIcon className="size-12 text-gray-400" />
                   <p className="text-muted-foreground text-sm">Upload Image</p>
                 </div>
               )}

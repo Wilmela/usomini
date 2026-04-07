@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { blogs } from "@/lib/constant";
+import { blogs } from "@/lib/constants/";
 import { Suspense } from "react";
 
 type Props = {
@@ -261,6 +261,7 @@ async function RenderBlog({ slug }: {slug:string}) {
                               alt={related.title}
                               fill
                               className="object-cover group-hover:scale-110 transition-transform duration-300"
+                              sizes="100vw"
                             />
                           </div>
                           <div>

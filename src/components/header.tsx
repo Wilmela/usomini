@@ -17,7 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { links } from "@/lib/constant";
+import { links } from "@/lib/constants";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

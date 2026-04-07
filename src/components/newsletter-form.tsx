@@ -105,7 +105,7 @@ export default function NewsletterForm({
                     <Input
                       placeholder="Enter your email"
                       type="email"
-                      className="min-w-[250px]"
+                      className="min-w-62.5"
                       {...field}
                       disabled={isSubmitting}
                     />

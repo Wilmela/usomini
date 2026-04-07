@@ -13,8 +13,6 @@ gsap.registerPlugin(useGSAP, SplitText);
 
 const Landing = () => {
   useGSAP(() => {
-    if (typeof window !== "undefined") return;
-
     const texts = gsap.utils.toArray<HTMLElement>("#h1");
 
     texts.forEach((text) => {
@@ -42,11 +40,11 @@ const Landing = () => {
     gsap.fromTo(
       "#btn",
       {
-        x: 200,
+        y: 200,
         opacity: 0,
       },
       {
-        x: 0,
+        y: 0,
         opacity: 1,
         duration: 0.6,
         delay: 0.7,
@@ -97,7 +95,7 @@ const Landing = () => {
             <h3 className="subtitle z-20 text-center" id="h3">
               Where nature&apos;s bounty flows as freely as <br /> our welcome
             </h3>
-            <p className="text-white text-sm mt-8">-since 1940-</p>
+            <p className=" text-sm mt-8 text-app-light-gold">-since 1940-</p>
           </div>
         </div>
         <Link href={"#feature"} className="z-10" id="btn">
