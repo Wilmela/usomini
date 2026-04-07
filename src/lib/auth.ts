@@ -10,8 +10,7 @@ export const auth = betterAuth({
   baseURL: siteConfig.baseUrl,
   trustedOrigins: [
     "http://localhost:3000",
-    "https://onelga.rv.gov",
-    "https://www.onelga.rv.gov",
+    "https://usomini.vercel.app",
   ],
 
   user: {

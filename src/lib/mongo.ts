@@ -2,7 +2,7 @@ import { MONGO_URL } from "@/env";
 import { MongoClient } from "mongodb";
 
 if (!MONGO_URL) {
-  throw new Error("Missing MONGO_URI");
+  throw new Error("Missing MONGO_URL");
 }
 
 const client = new MongoClient(MONGO_URL);

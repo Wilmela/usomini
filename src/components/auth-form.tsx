@@ -41,6 +41,7 @@ const AuthForm = ({ type }: AuthType) => {
     try {
       if (type === "SignUp") {
         const res = await signUp(data as signUpFormSchemaType);
+
         if (!res?.error) {
           router.replace("/auth/sign-in");
         }
@@ -67,9 +68,9 @@ const AuthForm = ({ type }: AuthType) => {
       />
 
       {/* RIGHT */}
-      <MaxWidthWrapper className="absolute flex flex-col justify-center size-full z-10 bg-black/70 max-w-prose">
+      <MaxWidthWrapper className="absolute flex flex-col justify-center size-full z-10 bg-white/90 max-w-prose">
         <Form {...form}>
-          <h1 className="text-3xl font-bold text-center mb-8 text-white">
+          <h1 className="text-3xl font-bold text-center mb-8 text-accent-foreground">
             {type === "SignUp"
               ? "Create A New Account"
               : "Sign In To Your Account"}

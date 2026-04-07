@@ -62,7 +62,7 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 // Validation schema for sign-up form
 export const signUpSchema = z.object({
   name: z.string().min(2, "Full name must be at least 2 characters"),
-  username: z.string().min(3, "Username must be at least 3 characters"),
+  // username: z.string().min(3, "Username must be at least 3 characters"),
   email: z.email("Please enter a valid email address"),
   password: z
     .string()

@@ -18,9 +18,11 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { links } from "@/lib/constants";
+import { authClient } from "@/lib/auth-client";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const session = authClient.useSession();
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-white/60 ">
@@ -46,12 +48,20 @@ const Header = () => {
             size="sm"
             className="hidden sm:inline-flex hover:bg-green-50 text-green-700 hover:text-green-800 text-sm md:text-xl p-2"
           >
-            <span className="size-12 rounded-full bg-green-500/10 flex items-center justify-center">
-              <p className="text-bold text-2xl">U</p>
-            </span>
+            {session && (
+              <span className="size-12 rounded-full bg-green-500/10 flex items-center justify-center">
+                <p className="text-bold text-2xl">
+                  {session?.data?.user.name.charAt(0)}
+                </p>
+              </span>
+            )}
           </Button>
 
-          <MobileNav open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} />
+          <MobileNav
+            open={mobileMenuOpen}
+            onOpenChange={setMobileMenuOpen}
+            session={session}
+          />
         </div>
       </MaxWidthWrapper>
     </header>
@@ -90,12 +100,15 @@ function DesktopNav() {
   );
 }
 
+
 interface MobileNavProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  session: any;
 }
 
-function MobileNav({ open, onOpenChange }: MobileNavProps) {
+function MobileNav({ open, onOpenChange, session }: MobileNavProps) {
   const pathname = usePathname();
 
   return (
@@ -156,11 +169,16 @@ function MobileNav({ open, onOpenChange }: MobileNavProps) {
           })}
         </nav>
 
-        <div className="mt-8 pt-6 border-t">
-          <span className="size-16 bg-green/10 flex items-center justify-center rounded-full bg-green-600 hover:bg-green-700">
-            <p className="text-bold text-2xl text-white">U</p>
-          </span>
-        </div>
+        {session && (
+          <div className="mt-8 pt-6 border-t">
+            <span className="size-16 bg-green/10 flex items-center justify-center rounded-full bg-green-600 hover:bg-green-700">
+              <p className="text-bold text-2xl text-white">
+                {" "}
+                {session?.data?.user.name.charAt(0)}
+              </p>
+            </span>
+          </div>
+        )}
       </SheetContent>
     </Sheet>
   );
