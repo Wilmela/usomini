@@ -73,7 +73,7 @@ export default function FeaturedProjects() {
         </div>
       </div>
 
-      {/* <div className="md:hidden grid grid-cols-1 gap-6">
+      <div className="md:hidden grid grid-cols-1 gap-6">
         {values.map((v) => (
           <ProjectCard
             className="w-full h-75"
@@ -84,7 +84,7 @@ export default function FeaturedProjects() {
             imageClassName="aspect-video"
           />
         ))}
-      </div> */}
+      </div>
     </MaxWidthWrapper>
   );
 }
